@@ -24,8 +24,8 @@ example:
 for(let i=0;i<n;i++)
     x++
 
-Time complexity varies according to n. ie, linear amount of time is used to execute the code in the for loop.
-Time complexity for searching an item in an array from position 0 is O(n). It depends on teh position of the item. WOrst case is the last item. 
+Time complexity chnages according to n. ie, linear amount of time is used to execute the code in the for loop.
+Time complexity for searching an item in an array from position 0 is O(n). It depends on the position of the item. Worst case is the last item. 
 
 O(log n)
 example:
@@ -36,9 +36,10 @@ while(i<n)
 in the example, i is doubled and getting closer to n in every loop. The number of loops to reach n is x=log2(n)
 Time complexity of binary search is O(log n). we repeatedly divided the sorted array in half and look for which gorup the target will be. Its more efficient than checking every item in the array.
 
-in the above time complexity, we have simple O(1) operations inside the for and while loop. When we calculated time, we only considered worst case scenario in the process. Thats why O(1) is often ignored when there the loop involved. This process is knownn as Big O, aka Big Order function. we only count the dormant term and ignore constants and lower order terms. E.g. O(3*n^2 + 10n + 10) becomes O(n^2).
+in the above time complexity, we have simple O(1) operations inside the for or while loop. When we calculated time, we only considered worst case scenario in the loop. Thats why O(1) within is often ignored in a loop. 
 
-O(nlog n)
+
+O(n log n)
 exmple: 
 
 for(let i=0;i<n;i++){
@@ -47,9 +48,26 @@ for(let i=0;i<n;i++){
         i*=2
 }
 
-This is the above while loop (O(log n))being run n time, so we have n(log n)
+Here we have a while loop (O(log n)) being run n time, thus we have O(n * O(log n)) = O(n log n)
+
+O(n^2) 
+for(let r=0;r<n;r++){
+    for(let c=0;c<n;c++){
+        matrix[r][c]=1
+    }
+}
+In this 2D array we have a for loop within a for loop, ie O(n * O(n)) = O(n^2)
+
+In the case the 2d array is not same size
+for(let r=0;r<m;r++){
+    for(let c=0;c<n;c++){
+        matrix[r][c]=1
+    }
+}
+We still have a for loop within a for loop, ie O(m * O(n)) = O(mn)
 
 
+It seems straighe forward to calculate time complexity in the above examples when the code is short. In reality our code is way longer and complex. We are not displaying all the time with a long strand of every operation. we only count the dormant ones and ignore constants and lower order terms. E.g. O(3*n^2 + 10n + 10) becomes O(n^2).
 
 
 
