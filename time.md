@@ -1,1 +1,39 @@
-time
+What is time complexity
+
+As we get more experience with coding, we will want to know how we can make our code runs more efficiently. We can do this by finding the time complexity. Time complexity is the number of time a statement is being executed as input size grows (to Infinity). 
+
+graph goes here
+
+the time complexity we run into are most often are O(1), O(log n), O(n) and O(n*log n)
+
+(there are also O(n^2), O(2^n) and O(n!) which are rearly involved as the time could be Infinity, so we are not discussing it here. )
+
+O(1)
+example: 
+let x=0
+let temp=x
+return temp
+
+Time complexity does not change. ie, constant amount of time is used to execute each line of code. No cycle involved. 
+
+O(n)
+example:
+for(let i=0;i<n;i++)
+    x++
+
+Time complexity varies according to n. ie, linear amount of time is used to execute the code in the for loop.
+Time complexity for searching an item in an array from position 0 is O(n). It depends on teh position of the item. WOrst case is the last item. 
+
+O(log n)
+example:
+let i=1
+while(i<n)
+    i*=2
+
+in the example, i is doubled and getting closer to n in every loop. The number of loops to reach n is x=log2(n)
+binary search is O(log n). we repeatedly divided the sorted array in half and look for which gorup the target will be. Its more efficient than checking every item in the array.
+
+
+
+
+
